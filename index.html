@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repositorio de Ubuntu</title>
+    <title>Repositorio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -87,13 +87,49 @@
 </head>
 <body>
     <header>
-        <h1>Repositorio de Notas</h1>
+        <h1>Repositorio Carlos</h1>
     </header>
     <main>
         <h2>Paquetes Disponibles</h2>
         <div class="package">
             <h3>Paquete 1</h3>
             <p>Este es un paquete de ejemplo que proporciona funcionalidad útil. Puedes encontrar más información sobre el paquete <a href="#">aquí</a>.</p>
+            <div class="code-container">
+                <pre>
+                    <code>                      
+CREATE FUNCTION Completar
+(
+	@valor		VARCHAR(MAX), 
+	@remplazar	CHAR(1),
+	@longitud	INT, 
+	@posicion	INT
+) 
+RETURNS VARCHAR(MAX) 
+AS 
+
+BEGIN 
+DECLARE @restante INT
+DECLARE @resultado VARCHAR(MAX)
+SET @restante = @longitud - LEN(@valor)
+
+
+IF @posicion = 0 
+	BEGIN
+		SET @resultado =  REPLICATE(@remplazar,@restante ) +  @valor
+	END 
+ELSE IF @posicion = 1
+	BEGIN
+		SET @resultado =   @valor  + REPLICATE(@remplazar,@restante ) 
+	END
+ELSE 
+	BEGIN
+		SET @resultado =   REPLICATE(@remplazar,@longitud ) 
+	END 
+	RETURN @resultado
+END
+GO
+                    </code>
+                </pre>
         </div>
         <div class="package">
             <h3>Paquete 2</h3>

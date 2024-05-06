@@ -12,7 +12,7 @@
   <body>
     <nav class="navbar bg-body-tertiary">
         <div class="container">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="index.html">
             <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24">
           </a>
         </div>
@@ -27,7 +27,7 @@
                       <div class="ms-2 me-auto">
                         <div class="fw-bold">Recursos</div>
                         <a href="#">Ver Codigos</a><br>
-                        <a href="#">Ver Codigos</a>
+                        <a href="FuntCompletar.html">Ver Codigos</a>
                       </div>
                       <span class="badge text-bg-primary rounded-pill">14</span>
                     </li>
@@ -51,9 +51,61 @@
             </div>
             
           <!-- CONTENIDO PRINCIPAL -->
-            <div class="col-md-9 p-3 ">
-                <img src="./Img/saturno1.jpg" class="card-img-top border-radius" alt="...">
-            </div>
+            <div class="col-md-9 p-3">
+                <div class="col-md-9 p-3">
+                    <h2>Funcion para completar</h2>
+                    <p>Esta funcion completa los caracteres restantes dentro de una logitud especificada. 
+                        Descargar aqui.
+                    </p>
+                    <pre>
+                        <code>
+                                                               
+CREATE FUNCTION Completar
+(
+	@valor		VARCHAR(MAX), 
+	@remplazar	CHAR(1),
+	@longitud	INT, 
+	@posicion	INT
+) 
+RETURNS VARCHAR(MAX) 
+AS 
+
+BEGIN 
+DECLARE @restante INT
+DECLARE @resultado VARCHAR(MAX)
+SET @restante = @longitud - LEN(@valor)
+
+
+IF @posicion = 0 
+	BEGIN
+		SET @resultado =  REPLICATE(@remplazar,@restante ) +  @valor
+	END 
+ELSE IF @posicion = 1
+	BEGIN
+		SET @resultado =   @valor  + REPLICATE(@remplazar,@restante ) 
+	END
+ELSE 
+	BEGIN
+		SET @resultado =   REPLICATE(@remplazar,@longitud ) 
+	END 
+	RETURN @resultado
+END
+GO
+                    
+                
+                        </code>
+                    </pre>
+                </div>
+                <div class="col-md-4 p-3">
+                   <a href="#">Maquina de aprendizaje</a> 
+                   <a href="#">ConvirteVozTextoJS.zip</a> 
+                   <a href="#">ConvierteTextoVozJS.zip</a> 
+                   <a href="#">paquete3.deb</a> 
+  
+                </div>
+
+              
+  
           
         </div>
       </div>

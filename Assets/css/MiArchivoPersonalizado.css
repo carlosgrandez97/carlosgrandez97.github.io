@@ -1,0 +1,12 @@
+/* MiArchivoPersonalizado.css */
+
+/* Modifica las variables de color de Bulma */
+:root {
+    --white: #fff; /* Color de fondo */
+    --black: #000; /* Color de texto */
+    --primary: #3273dc; /* Color primario */
+    --info: #209cee; /* Color de información */
+    --success: #23d160; /* Color de éxito */
+    --warning: #ffdd57; /* Color de advertencia */
+    --danger: #ff3860; /* Color de peligro */
+}
